@@ -9,15 +9,44 @@
     <h1 id="knockTitle">Knock Knock Joke Generator</h1>
 
     <p>This game is a way to play Knock Knock Jokes, please enter the the information as requested.</p>
-    
-    <script src ="jokes.js">
         <ul>
         <li>Knock knock</li>
         <li>Who’s there?</li>
-        <li id="generatedMessage">you</li>
-        <li id="csinput"><input>please enter something here</input></li>
-        <li id="generatedResponse">you wish you were here</li>
+        <li id="generatedMessage"></li>
+        <li id="csinput"></li>
+        <li id="generatedResponse"></li>
         </ul>
+
+    <script>
+                    var joke ="";
+
+            const jokeQuestion = [
+                "You",
+                "Radio",
+                "Ice cream",
+                "Weirdo",
+                "Canoe"
+            ]
+            const jokeAnswer = [
+                "Yoo-hoo! Anybody home?",
+                "Radio not, here I come!", 
+                "ICE CREAM SO YOU CAN HEAR ME!",
+                "Weirdo you think you’re going?",
+                "Canoe come out now?"
+            ]
+
+            function joking(jokeSize) {
+                let randomJoke = Math.random()*jokeSize;
+                return Math.round(randomJoke);
+            }
+
+            let jokeNumber = joking(jokeQuestion.length);
+            console.log("knock Knock");
+            console.log("Who's there?")
+            document.getElementById("generatedMessage").innerHTML = jokeQuestion[jokeNumber];
+            document.getElementById("csinput").innerHTML = jokeQuestion[jokeNumber]+" who?";
+            document.getElementById("generatedResponse").innerHTML = jokeAnswer[jokeNumber];
+            
     </script>  
     <hr>
     
